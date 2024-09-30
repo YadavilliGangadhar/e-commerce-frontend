@@ -1,0 +1,34 @@
+/* src/app/header/header.component.css */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav > ul > li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  nav a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  nav .dropdown {
+    display: none; /* Hide the dropdown by default */
+    position: absolute; /* Position it relative to the parent */
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  nav > ul > li:hover .dropdown {
+    display: block; /* Show the dropdown on hover */
+  }
+  
+  nav .dropdown li {
+    display: block; /* Stack dropdown items */
+  }
+  

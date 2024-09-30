@@ -1,0 +1,15 @@
+/* src/app/product-create/product-create.component.css */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .text-danger {
+    font-size: 0.875em;
+  }
+  

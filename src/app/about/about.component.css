@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.about-us {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #343a40;
+}
+
+.intro, .mission, .commitment {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+.intro {
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+}
+
+.mission {
+    border-left: 5px solid #28a745;
+    padding-left: 10px;
+}
+
+.commitment {
+    border-left: 5px solid #dc3545;
+    padding-left: 10px;
+}

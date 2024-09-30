@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="username" id="username">
+        <div *ngIf="f.username.errors && submitted" class="text-danger">Username is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password">
+        <div *ngIf="f.password.errors && submitted" class="text-danger">Password is required (min 6 characters)</div>
+      </div>
+      <div class="mb-3">
+        <label for="roles" class="form-label">Role</label>
+        <select class="form-select" formControlName="roles" id="roles" multiple>
+          <option value="USER">User</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+        <div *ngIf="f.roles.errors && submitted" class="text-danger">At least one role is required</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+  

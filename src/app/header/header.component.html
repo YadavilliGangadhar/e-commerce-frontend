@@ -1,0 +1,62 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Commerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home" *ngIf="(isLoggedIn$ | async)">Home</a>
+          </li>
+
+          <li>
+            <a routerLink="/products" *ngIf="(isLoggedIn$ | async) ">Products</a>
+            <ul class="dropdown"> <!-- Dropdown for sub-menu -->
+              <li><a routerLink="/products">View Products</a></li> <!-- Main Products link -->
+              <li><a routerLink="/products/create">Create Product</a></li> <!-- Subsection for Create Product -->
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" *ngIf="(isLoggedIn$ | async)">Cart</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/orders" *ngIf="(isLoggedIn$ | async)">Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile" *ngIf="(isLoggedIn$ | async)">Profile</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" *ngIf="(isLoggedIn$ | async)">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/help" *ngIf="(isLoggedIn$ | async)">Help</a>
+          </li>
+          
+          <li class="nav-item" *ngIf="isLoggedIn$ | async; else notLoggedIn">
+            <!-- Show logout button if logged in -->
+            <a class="nav-link" href="javascript:void(0)" (click)="logout()">Logout</a>
+          </li>
+          <ng-template #notLoggedIn>
+            <li class="nav-item">
+              <!-- Conditionally show Register or Login based on the current route -->
+              <a class="nav-link" 
+                 *ngIf="currentRoute === '/login'; else showLogin" 
+                 routerLink="/register">
+                Register
+              </a>
+              <ng-template #showLogin>
+                <a class="nav-link" routerLink="/login">Login</a>
+              </ng-template>
+            </li>
+          </ng-template>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
